@@ -1,13 +1,17 @@
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import Graphs from './containers/graphs';
+import Navbar from './containers/navbar';
+import Sidebar from './containers/sidebar';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Team Mewtwo
-        </p>
-      </header>
+      <Navbar/>
+      <Sidebar/>
+      <Graphs/>
+      
     </div>
   );
 }
