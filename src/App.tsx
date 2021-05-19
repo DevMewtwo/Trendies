@@ -11,7 +11,6 @@ function App() {
       <Navbar/>
       <Sidebar/>
       <Graphs/>
-      
     </div>
   );
 }
