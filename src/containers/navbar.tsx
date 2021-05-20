@@ -1,22 +1,26 @@
 import React from 'react';
 import Login from '../components/login';
 import Signup from '../components/signup';
+import Logo from '../rocket-launch.svg';
+
 import '../App.css';
 
 function Navbar() {
     return (
       <div id ='navbar'>
         <div id='titleLogo'>
-          LOGO TBD
+          <img src={Logo}/>
         </div>
         <div id='titleName'>
-          NAME TBD
+          TRENDIE$
         </div>
-        <div id='Signup'>
-          <Signup />
-        </div>
-        <div id='Login'>
-          <Login />
+        <div id="signup-login">
+          <div id='Signup'>
+            <Signup />
+          </div>
+          <div id='Login'>
+            <Login />
+          </div>
         </div>
       </div>
     )

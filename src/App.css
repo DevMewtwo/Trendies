@@ -1,4 +1,5 @@
 .App {
+  padding: 10px;
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
@@ -7,72 +8,128 @@
 
   display: grid;
   grid-template-columns: 0.6fr 1.4fr 1fr 1fr;
-  grid-template-rows: 0.3fr 1.7fr 1fr;
-  gap: 5px 5px;
+  grid-template-rows: 100px 1.7fr 1fr;
+  gap: 10px 10px;
   grid-template-areas:
     "navbar navbar navbar navbar"
     "sidebar graphscontainer graphscontainer graphscontainer"
     "sidebar graphscontainer graphscontainer graphscontainer";
 }
 
+@font-face {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  src:'https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap';
+}
+
 #navbar {
   display: grid;
   grid-template-columns: 0.4fr 1.8fr 0.8fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100px;
   gap: 0px 0px;
   grid-template-areas:
     "titlelogo titlename signup-login";
   grid-area: navbar;
-  background-color: palevioletred;
+  /* background-color: palevioletred; */
 }
 
 #GraphsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1.2fr 0.8fr;
-  gap: 5px 5px;
+  gap: 10px 10px;
   grid-template-areas:
     "graphleft graphcenter graphright"
     "graphlarge graphlarge graphlarge";
   grid-area: graphscontainer;
-  background-color: plum;
+  /* background-color: plum; */
 }
 
 #GraphLarge { 
   grid-area: graphlarge; 
-  background-color: lightgreen;
+  /* width: 1000px; */
+  float:left;
+  /* background-color: lightgreen; */
 }
 
 #GraphLeft { 
   grid-area: graphleft;
-  background-color: red;
+  border-radius: 7px;
 }
 
 #GraphCenter { 
-  grid-area: graphcenter; 
-  background-color: cyan;
+  grid-area: graphcenter;
+  border-radius: 7px;
+  /* background-color: #1d2127; */
 }
 
 #GraphRight { 
   grid-area: graphright; 
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
-#titleLogo { 
-  grid-area: titlelogo; 
-  background-color: violet;
+#titleLogo img{ 
+  grid-area: titlelogo;
+  /* float: right; */
+  /* background-color: violet; */
 }
 
 #titleName { 
   grid-area: titlename;
-  background-color: teal;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 88px;
+  text-align: left;
+  /* background-color: teal; */
 }
 
 #signup-login { 
   grid-area: signup-login; 
+  position: relative;
+  top: 45px;
+  /* background-color: powderblue; */
+}
+
+#Signup {
+  /* display: inline-block; */
+  float: right;
+}
+
+#Login {
+  /* display: inline-block; */
+  float: right;
+  position: relative;
+  right: 20px;
 }
 
 #sidebar { 
   grid-area: sidebar;
-  background-color: orange;
+  border-radius: 7px;
+  /* background-color: #1d2127; */
+}
+
+button {
+  border-radius: 7px;
+  border: 1px white solid;
+  width: 100px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #282c34;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 14px;
+}
+
+button:hover {
+  color: #282c34;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+#tickerSearch{
+  height: 25px;
+  width: 150px;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+#displayTech{
+  margin-top: 25px;
 }
