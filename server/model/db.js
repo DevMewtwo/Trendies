@@ -1,7 +1,8 @@
+require('dotenv').config();
 const { Pool } = require('pg');
 const models = require('./models');
 
-const connectionString = 'postgresql://localhost:5432/random7';
+const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASS}@kashin.db.elephantsql.com/${process.env.DB_USER}`;
 
 // Create a new pool here using the connection string above
 const pool = new Pool({

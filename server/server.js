@@ -2,11 +2,21 @@ const express = require('express');
 const path = require('path');
 const userController = require('./controllers/userController');
 const authController = require('./controllers/authController');
+var cors = require('cors')
 
 const app = express();
+app.use(cors())
 
 // Parse JSON body
 app.use(express.json());
+
+
+app.use((req, res, next) =>{
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 // Serve the React Application on the homepage
 app.get('/', (req, res) => {
@@ -31,4 +41,4 @@ app.use((err, req, res, next) => {
   })
 });
 
-app.listen(3000);
+app.listen(8080);
