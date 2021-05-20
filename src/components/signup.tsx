@@ -90,13 +90,13 @@ const Signup = (props:any) => {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        "email": emailText,
+        "emailaddress": emailText,
         "username": userText,
         "password": passText
       })
     }
 
-    fetch('/signup', requestBody) 
+    fetch('http://localhost:8080/signup', requestBody) 
       .then(response => response.json())
       .then(data =>{
         

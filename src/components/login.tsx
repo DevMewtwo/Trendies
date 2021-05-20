@@ -96,15 +96,17 @@ const Login = (props:any) => {
       })
     }
 
-    fetch('/login', requestBody) 
+    fetch('http://localhost:8080/login', requestBody) 
       .then(response => response.json())
       .then(data =>{
        
-        console.log('loginFail state: ', data.loginFail)
-        if(data.loginFail == false){
-          props.toggleLogin();
+        console.log(data)
+        if(data.status === 'success'){
           handleClose();
-        }
+        } 
+        if(data.status === 'fail'){
+          window.alert('no');
+        } 
 
       })
       .catch(err => console.log(err))
